@@ -2,7 +2,7 @@ import re
 import numpy as np
 import tensorflow as tf
 from tensorflow.python import keras
-from tensorflow.python.keras.models import model_from_json
+from tensorflow.python.keras.models import load_model
 from sklearn.preprocessing import LabelEncoder
 from joblib import load
 
@@ -19,9 +19,7 @@ class TweeterClassifier:
         self.tokenizer = load('src/save/tokenizer.joblib')
         self.label_encoder = load('src/save/label_encoder.joblib')
         # load model
-        with open('src/save/model.json', 'r') as f:
-            self.model = model_from_json(f.read())
-        self.model.load_weights('src/save/model.h5')
+        self.model=load_model('src/save/model.h5')
         self.model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     def predict(self, tweet):
