@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/classify', methods=['POST', 'GET'])
 def index():
     if request.method == 'GET':
-        return 'Welcome to Tweeter Disaster Classifier'
+        return 'Welcome to Twitter Disaster Classifier'
 
     if request.method == 'POST':
         if not request.json:
