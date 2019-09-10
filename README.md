@@ -21,3 +21,4 @@ The data from the following crisis events were used in this analysis :
 - Tornado
 - Explosion
 - Bombing
+- Wildfire
