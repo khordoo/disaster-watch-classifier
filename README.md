@@ -22,3 +22,13 @@ The data from the following crisis events were used in this analysis :
 - Explosion
 - Bombing
 - Wildfire
+
+## 3. Application
+The workflow starts with the data collection process. The backend API uses a keyword-based sampling approach to collect tweets using Twitter’s streaming API. In this context, a reference dictionary of disaster-related terms, developed by CrisisLex.org, was used as keywords. CrisisLex is a lexicon of 380 disaster-related terms that frequently appeared in relevant tweets during different types of disasters between October 2012 and July 2013 in the US, Canada, and Australia.
+
+The API then sends the tweet to the deep learning model built using TensorFlow 2.0 for Python and exposed as a Flask app. The model analyzes textual content of tweets to evaluate their relevance to floods, earthquakes, hurricanes, tornadoes, explosions, and bombings. The relevant tweets are then sent to the geoparser, which extracts place names from the text and geocodes them. Finally, the results are sent to the frontend for visualization.
+You can read the full description of the application along with the arcitectral diangram on [Google's Tensorflow blog.](https://blog.tensorflow.org/2019/09/disaster-watch-crisis-mapping-platform.html)
+
+![image](https://1.bp.blogspot.com/-pcb5b2MdrAQ/XgpZpn10gwI/AAAAAAAACI4/HXdWlxs5NjUP5rbRv_FE0n4MFs8OZvsrACLcBGAsYHQ/s1600/map.gif)
+
+
