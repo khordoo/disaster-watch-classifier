@@ -1,8 +1,9 @@
+import os
 import json
 from flask import Flask, request, abort
 from src.model import TweeterClassifier
 
-classifier = TweeterClassifier()
+classifier = TweeterClassifier(model_dir='src/save')
 
 app = Flask(__name__)
 
