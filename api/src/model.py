@@ -12,14 +12,15 @@ class TweeterClassifier:
        and classifies the disaster related  tweets.
     """
 
-    def __init__(self):
+    def __init__(self, model_dir):
         # Load pre-processing
         self.MAX_TWEET_LENGTH = 100
         self.MIN_PREDICTION_SCORE = 0.95
-        self.tokenizer = load('src/save/tokenizer.joblib')
-        self.label_encoder = load('src/save/label_encoder.joblib')
+        self.tokenizer = load(f'{model_dir}/tokenizer.joblib')
+        self.tokenizer = load(f'{model_dir}/tokenizer.joblib')
+        self.label_encoder = load(f'{model_dir}/labelencoder.joblib')
         # load model
-        self.model=load_model('src/save/model.h5')
+        self.model = load_model(f'{model_dir}/model.h5')
         self.model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     def predict(self, tweet):
@@ -34,7 +35,7 @@ class TweeterClassifier:
         prediction_category = self.label_encoder.inverse_transform(prediction_class)[0]
         if prediction_score < self.MIN_PREDICTION_SCORE:
             prediction_category = 'unrelated'
-        return {'category': prediction_category, 'score': prediction_score, 'tweet': tweet}
+        return {'category': prediction_category, 'score': str(prediction_score), 'tweet': tweet}
 
     def _sanitize(self, tweet):
         tweet = tweet.lower()
