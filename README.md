@@ -1,7 +1,7 @@
 # Disaster Watcher 
 
 ## Real-Time Disaster Identification using Twitter Data and Deep Learning
-Disaster Watch, is a **grand prize winner** submission to the **Google Tensorflow competition** challenge Challenge, is a crisis mapping platform that collects data from Twitter, extracts disaster-related information from tweets, and visualizes the results on a map.
+Disaster Watch, a **Grand Prize Winner** submission to the **Google Tensorflow competition** challenge, is a crisis mapping platform that collects data from Twitter, extracts disaster-related information from tweets, and visualizes the results on a map.
 This repository proves the developed models which utilize the different machine and deep learning models including NLP, NER, geocoding, and various geo-spatial techniques to identify, classify and geolocate natural disaster events in real-time. 
 
 ## 1. Introduction
