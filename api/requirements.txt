@@ -19,7 +19,7 @@ scikit-learn==0.21.3
 scipy==1.2.1
 six==1.12.0
 tb-nightly==1.14.0a20190301
-tensorflow==2.0.0a0
+tensorflow==2.5.1
 termcolor==1.1.0
 tf-estimator-nightly==1.14.0.dev2019030115
 Werkzeug==0.15.2
